@@ -30,7 +30,7 @@ def probeDomain():
 
     for i in domains:
         try:
-            res = urllib.request.urlopen(  str( i)).getcode()
+            res = urllib.request.urlopen(  str( i), timeout=4).getcode()
             if res == 200:
                 print ( str( i) + GREEN + " --> UP" + DONE )
             elif res == 404:
